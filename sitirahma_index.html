@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Kota Bandung</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-
+button.css">
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-
+fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-
+dataclassification.css" />
+
+<!--leaflet javascript-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-
+20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-
+fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"
+charset="utf-8"></script>
+
+    <script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-
+dataclassification.js"></script>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+  </head>
+
+<!--jquery-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+     <!--Header Section-->
+    <header id="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="asset/logobdg.png" alt="Logo" width="100">
+                    <h1>WebGIS Kota Bandung</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#hero-section">Home</a></li>
+                        <li><a href="#map-section">Map</a></li>
+                        <li><a href="#data-section">Data</a></li>
+                        <li><a href="#author-section">Author</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <!--Hero Section-->
+    <div id="hero-section" class="hero-section">
+        <div class="hero-content">
+            <h1>WebGIS Basis Data Spasial Kota Bandung</h1>
+            <p>Halaman untuk Melakukan Eksplorasi Basis Data Spasial di Kota Bandung</p>
+        </div>
+    </div>
+    <!--Map Section-->
+    <div id="map-section">
+        <h2>Jelajahi WebGIS Basis Data Spasial Kota Bandung</h2>
+        <div id="map">
+        <!-- akan muncul peta disini -->
+        </div>
+    </div>
+    <!--Data Section-->
+    <style>
+        .description p {
+            text-align: justify;
+        }
+    </style>
+        <div id="data-section">
+                <h2>Data Tersedia</h2>
+                <div class="container">
+                    <div class="column">
+                        <div class="data-item">
+                            <img src="asset/bandoeng.jpg" alt="Image 1">
+                            <div class="description">
+                                <h3>Letak Geografis</h3>
+                                <p>Letak, Luas dan Batas Wilayah Kota Bandung terletak pada posisi 107º36' Bujur Timur dan 6º55' Lintang Selatan. Luas wilayah Kota Bandung adalah 16.729,65 Ha. Secara administratif, Kota Bandung berbatasan dengan beberapa daerah Kabupaten/Kota lainnya, yaitu:
+
+                                    1. sebelah Utara berbatasan dengan Kabupaten Bandung dan Kabupaten Bandung Barat;
+                                    
+                                    2. sebelah Barat berbatasan dengan Kota Cimahi;
+                                    
+                                    3. sebelah Timur berbatasan dengan Kabupaten Bandung; dan
+                                    
+                                    4. sebelah Selatan berbatasan dengan Kabupaten Bandung.
+                                    Secara morfologi regional, Kota Bandung terletak di bagian tengah “Cekungan Bandung”, yang mempunyai dimensi luas 233.000 Ha. Secara administratif, cekungan ini terletak di lima daerah administrasi Kabupaten/Kota, yaitu Kota Bandung, Kabupaten Bandung, Kabupaten Bandung Barat, Kota Cimahi, dan 5 Kecamatan yang termasuk Kabupaten Sumedang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="data-item">
+                            <img src="asset/Praktikum Acara 10.jpg" alt="Image 1">
+                            <div class="description">
+                            <h3>Jumlah penduduk</h3>
+                            <p>Sebaran penduduk di Kota Bandung terbesar adalah di Kecamatan Babakan Ciparay, yaitu hampir 6% dari seluruh penduduk Kota Bandung, diikuti oleh Kecamatan Bandung Kulon, Kiaracondong, Bojong Kaler, Batununggal, dan Coblong. Jumlah penduduk paling sedikit ada di Kecamatan Cinambo, Bandung Wetan, Sumur Bandung, Gedebage, dan Panyileukan. Kepadatan penduduk terbesar ada di Kecamatan Bojongloa Kaler dengan tingkat kepadatan mencapai 39.337 jiwa/km2, kemudian Andir dan Astanaanyar. Kepadatan penduduk terkecil adalah di Gedebage, Cinambo, dan Panyileukan. Lebih jelasnya dapat dilihat pada gambar berikut ini (Sumber : BPS Bandung) </p>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="column">
+                            <div class="data-item">
+                            <img src="asset/topobdg.jpg" alt="Image 1">
+                            <div class="description">
+                            <h3>Kondisi Topografi</h3>
+                            <p>Kondisi Topografi Kota Bandung terletak pada ketinggian 700 m di atas permukaan laut (dpl). Titik tertinggi di kelurahan Ledeng kecamatan Cicadap dengan ketinggian 892 m dpl, dan titik terendah berada di Kelurahan Rancanumpang Kecamatan Gedebage dengan ketinggian 666 m dpl. Wilayah yang dikelilingi oleh pegunungan membentuk Kota Bandung menjadi semacam cekungan (Bandung Basin).</p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="container">
+                            <div class="column">
+                            <div class="data-item">
+                            <img src="asset/budaya.jpeg" alt="Image 1">
+                            <div class="description">
+                            <h3>Kebudayaan</h3>
+                            <p>Salah satu ciri khas budaya Bandung adalah keramah-tamahan warganya yang dikenal dengan istilah someah hade ka semah, yang berarti bersikap ramah kepada tamu. Nilai-nilai kekeluargaan, gotong royong, dan sopan santun masih sangat dijunjung tinggi dalam kehidupan sehari-hari masyarakat Bandung.
+
+                                Seni tradisional seperti angklung, kecapi suling, dan wayang golek masih dilestarikan dan ditampilkan dalam berbagai acara budaya. Sementara itu, budaya populer berkembang pesat dengan munculnya komunitas kreatif di bidang musik, seni rupa, fesyen, dan kuliner. Bandung juga dikenal sebagai “kota desain” oleh UNESCO karena kontribusinya yang besar dalam dunia kreatif dan desain.
+                                
+                                Kuliner menjadi bagian penting dari budaya Bandung, dengan sajian khas seperti batagor, siomay, cireng, hingga nasi tutug oncom yang menggambarkan keanekaragaman rasa dan kreativitas masyarakatnya.
+                                
+                                Budaya Bandung adalah refleksi dari semangat muda, keberagaman, dan inovasi, yang tetap berakar kuat pada nilai-nilai tradisional Sunda. Perpaduan ini menciptakan identitas unik yang menjadikan Bandung sebagai kota yang tidak hanya nyaman untuk ditinggali, tetapi juga penuh inspirasi bagi siapa saja yang datang.</p>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="column">
+                            <div class="data-item">
+                            <img src="asset/wisatabdg.jpg" alt="Image 1">
+                            <div class="description">
+                            <h3>Destinasi Wisata</h3>
+                            <p>Selain wisata alam, Bandung juga dikenal dengan wisata belanja dan kulinernya. Dari factory outlet di Jalan Riau dan Dago hingga pusat perbelanjaan modern dan pasar tradisional yang menjual berbagai oleh-oleh khas Sunda. Kuliner Bandung pun tak kalah menggoda, mulai dari makanan kaki lima hingga kafe tematik yang unik dan Instagramable.
+
+                                Bagi penggemar wisata edukatif dan budaya, Bandung memiliki banyak museum, galeri seni, dan kawasan bersejarah seperti Jalan Asia Afrika dan Gedung Sate yang sarat makna historis. Tak ketinggalan, kampus-kampus ternama dan komunitas kreatif turut menyumbang atmosfer intelektual dan inovatif dalam geliat wisatanya.
+                                
+                                Dengan segala pesonanya, Bandung tak hanya tempat untuk dikunjungi, tapi juga dirasakan dan dikenang. Sebuah kota yang selalu punya alasan untuk didatangi kembali.</p>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="author-section">
+                        <div class="author-content">
+                            <h2>Tentang Pembuat</h2>
+                            <img src="asset/cantik.jpeg" alt="Profile Picture" class="profile-picture">
+                            <div class="author-name">
+                            <h3>Siti Rahma Septiyani</h3>
+                            </div>
+                            <p>Siti Rahma Septiyani, seorang mahasiswa yang sedang menempuh pendidikan S1 prodi Sains Informasi Geografi di Universitas Pendidikan Indonesia. Saat ini memiliki minat pada SIG, penginderaan jauh,
+                            WebGIS, dan SIG untuk mitigasi bencana dan termotivasi untuk terus belajar dan berkembang sebagai
+                            analis SIG.</p>
+                            </div>
+                            </div>
+                            <div id="footer">
+                                <div class="footer-content">
+                                <h3>Hubungi Saya</h3>
+                                <p>Email: rahmaseptiyani4@gmail.com</p>
+                                <p>Phone: +6287821785802</p>
+                                </div>
+                                </div>
+<script src="js/script.js"></script>  
+<head>
+    <title>WebGIS Basemap Control</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>#map { height: 100vh; }</style>
+  </head>
+  <body>
+  
+  <div id="map"></div>
+  
+ 
+</body>
+</html>
